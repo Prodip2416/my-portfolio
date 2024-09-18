@@ -117,79 +117,95 @@ const Resume = () => {
       </Typography>
 
       <Box component="div" className={classes.timeLine}>
-        <Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+        <Typography
+          variant="h2"
+          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+        >
           2018
         </Typography>
         <Box component="div" className={classes.timeLineItem}>
-          <Typography variant="h5" align="center" className={classes.subHeading}>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.subHeading}
+          >
             Junior Software Engineer
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
             Al-Hiyal Software
           </Typography>
-          <Typography variant="subtitle1" align="center" className={classes.subtitle1}>
-            Al-Hiyal Software is an offshore development center of S3Tech Corporation. S3Tech Corporation is a USA based company and has been providing technology consultancy, stuffing, onsite and offsite or offshore development services and solutions.
-            We are the premier IT Consulting and Professional Services provider in the USA and Bangladesh. We maintains the highest value and reliability rankings among its customers, and have the experience on the most recognized development platforms. We serve global enterprises through technology and services made possible by the onsite & offshore professional services model.
+          <Typography
+            variant="subtitle1"
+            align="center"
+            className={classes.subtitle1}
+          >
+            Al-Hiyal Software is an offshore development center of S3Tech
+            Corporation. S3Tech Corporation is a USA based company and has been
+            providing technology consultancy, stuffing, onsite and offsite or
+            offshore development services and solutions.
+          </Typography>
+        </Box>
+
+        <Typography
+          variant="h2"
+          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+        >
+          2020
+        </Typography>
+        <Box component="div" className={classes.timeLineItem}>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.subHeading}
+          >
+            Software Engineer
+          </Typography>
+          <Typography variant="body1" align="center" className={classes.body1}>
+            Apsis Solutions Ltd.
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            className={classes.subtitle1}
+          >
+            In Apsis, everything we do, we do for our customer and our people
+            who are core foundation of our organization. We empower our team to
+            generate ideas which become use case for our customers to drive more
+            efficiency and effectiveness for business growth.
+          </Typography>
+        </Box>
+
+        <Typography
+          variant="h2"
+          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+        >
+          2023
+        </Typography>
+        <Box component="div" className={classes.timeLineItem}>
+          <Typography
+            variant="h5"
+            align="center"
+            className={classes.subHeading}
+          >
+            Software Specialist
+          </Typography>
+          <Typography variant="body1" align="center" className={classes.body1}>
+            SSL Wireless
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            align="center"
+            className={classes.subtitle1}
+          >
+            SSL Wireless is one of the most reputed software development,
+            fintech, and ITeS companies in Bangladesh pioneering SMS Banking,
+            mobile banking, value-added services, e-commerce, digital payments &
+            many other software services which have benefited millions of people
+            over the past 2 decades.
           </Typography>
         </Box>
 
         {/* <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2014
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            html & css
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2015
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Fullstack Javascript
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
-        <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
@@ -216,7 +232,7 @@ const Resume = () => {
             Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
             repudiandae, rerum necessitatibus nisi mollitia.
           </Typography> 
-         </Box> */}
+        </Box>  */}
       </Box>
     </Box>
   );
