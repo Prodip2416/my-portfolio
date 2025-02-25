@@ -63,7 +63,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
       tech: ['React', 'Redux', 'Node.js', 'MySQL'],
       demoLink: 'https://example.com',
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/prodip2416',
     },
     {
       title: 'Task Management System',
@@ -71,7 +71,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80',
       tech: ['React', 'TypeScript', 'NestJS', 'PostgreSQL'],
       demoLink: 'https://example.com',
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/prodip2416',
     },
     {
       title: 'Real-time Chat Application',
@@ -79,7 +79,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80',
       tech: ['React', 'Socket.io', 'Express', 'MongoDB'],
       demoLink: 'https://example.com',
-      githubLink: 'https://github.com',
+      githubLink: 'https://github.com/prodip2416',
     },
   ];
 
