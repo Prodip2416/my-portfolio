@@ -58,12 +58,12 @@ const ProjectCard = ({
 const Projects = () => {
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-stack e-commerce solution with real-time inventory management',
+      title: 'E-commerce Starter',
+      description: 'A e-commerce solution with real-time inventory management',
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80',
-      tech: ['React', 'Redux', 'Node.js', 'MySQL'],
-      demoLink: 'https://example.com',
-      githubLink: 'https://github.com/prodip2416',
+      tech: [ 'Node.js','Express.js', 'MySQL','Sequelize'],
+      demoLink: 'https://github.com/Prodip2416/e-com-service',
+      githubLink: 'https://github.com/Prodip2416/e-com-service',
     },
     {
       title: 'Task Management System',
