@@ -33,3 +33,4 @@ public/
 - **File size**: Under 2MB for fast loading
 
 The image will be automatically cropped to a circle and have a beautiful gradient border with hover effects!
+

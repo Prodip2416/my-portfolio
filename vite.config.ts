@@ -9,5 +9,15 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
+    target: 'esnext',
+    minify: 'esbuild',
+  },
+  define: {
+    global: 'globalThis',
+  },
+  server: {
+    fs: {
+      strict: false,
+    },
   },
 });
