@@ -12,6 +12,7 @@ import {
   Briefcase,
   User,
 } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -25,7 +26,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full bg-gray-950/80 backdrop-blur-sm z-50 border-b border-gray-800">
+    <header className="fixed w-full bg-gray-950/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-800 dark:border-gray-700">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a
@@ -50,6 +51,7 @@ const Header = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <a
               href="https://github.com/prodip2416"
               target="_blank"

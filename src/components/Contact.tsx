@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { trackPortfolioEvent } from '../utils/analytics';
 
 const Contact = () => {
   return (
@@ -29,6 +30,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            onClick={() => trackPortfolioEvent.emailClick()}
           >
             <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
             <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
@@ -48,6 +50,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            onClick={() => trackPortfolioEvent.linkedinClick()}
           >
             <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
             <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
@@ -67,6 +70,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            onClick={() => trackPortfolioEvent.githubClick()}
           >
             <Github className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
             <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
