@@ -142,6 +142,7 @@ export const portfolioData = {
       description: [
         'Led development of enterprise-scale React applications using TypeScript and Redux',
         'Architected and implemented RESTful APIs using Node.js and NestJS',
+        'Built the NestJS Auth Kit sample for authentication workflows: https://github.com/Prodip2416/nestjs-auth-kit',
         'Mentored junior developers and conducted code reviews',
         'Implemented CI/CD pipelines and automated deployment processes',
       ],
@@ -267,29 +268,6 @@ export const portfolioData = {
         description: 'Reduction in bug reports',
         value: '60%',
         color: 'bg-red-500',
-      },
-    ],
-    awards: [
-      {
-        title: 'Outstanding Technical Leadership',
-        company: 'SSL Wireless',
-        year: '2023',
-        description:
-          'Recognized for exceptional leadership in technical projects and team mentoring',
-      },
-      {
-        title: 'Rookie of the Year',
-        company: 'Al-Hiyal Software',
-        year: '2019',
-        description:
-          'Awarded for outstanding performance and rapid skill development',
-      },
-      {
-        title: 'GitHub Pull Shark',
-        company: 'GitHub',
-        year: '2024',
-        description:
-          'Achieved Pull Shark achievement for significant contributions',
       },
     ],
   },

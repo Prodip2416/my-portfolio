@@ -1,9 +1,7 @@
 import React from 'react';
 import {
-  Trophy,
   Target,
   TrendingUp,
-  Award,
   Users,
   Zap,
   Code2,
@@ -83,30 +81,6 @@ const Achievements = () => {
     },
   ];
 
-  const awards = [
-    {
-      title: 'Outstanding Technical Leadership',
-      company: 'SSL Wireless',
-      year: '2023',
-      description:
-        'Recognized for exceptional leadership in technical projects and team mentoring',
-    },
-    {
-      title: 'Rookie of the Year',
-      company: 'Al-Hiyal Software',
-      year: '2019',
-      description:
-        'Awarded for outstanding performance and rapid skill development',
-    },
-    {
-      title: 'GitHub Pull Shark',
-      company: 'GitHub',
-      year: '2024',
-      description:
-        'Achieved Pull Shark achievement for significant contributions',
-    },
-  ];
-
   return (
     <section className="py-20 bg-gray-950">
       <div className="container mx-auto px-4">
@@ -127,30 +101,6 @@ const Achievements = () => {
             ))}
           </div>
 
-          {/* Awards Section */}
-          <div className="bg-gray-900 p-8 rounded-xl border border-gray-800">
-            <h3 className="text-2xl font-bold text-center mb-8 text-white">
-              Awards & Recognition
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {awards.map((award, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 bg-gray-800 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-colors"
-                >
-                  <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold text-white mb-2">
-                    {award.title}
-                  </h4>
-                  <p className="text-cyan-400 font-medium mb-2">
-                    {award.company}
-                  </p>
-                  <p className="text-gray-400 text-sm mb-3">{award.year}</p>
-                  <p className="text-gray-300 text-sm">{award.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

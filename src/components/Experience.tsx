@@ -91,6 +91,7 @@ const Experience = () => {
       description: [
         'Led development of enterprise-scale React applications using TypeScript and Redux',
         'Architected and implemented RESTful APIs using Node.js and NestJS',
+        'Built the NestJS Auth Kit sample for authentication workflows: https://github.com/Prodip2416/nestjs-auth-kit',
         'Mentored junior developers and conducted code reviews',
         'Implemented CI/CD pipelines and automated deployment processes',
       ],
