@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
@@ -22,11 +21,10 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-float">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
-              Full Stack Developer
+              Full-Stack Developer
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-700 mb-8 animate-slide-up">
-              4+ years of experience crafting modern web applications with
-              React, Node.js, and cutting-edge technologies
+              React.js • Next.js • NestJS • TypeScript | 5+ Years | Open to Remote
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 animate-slide-up-delay-1">

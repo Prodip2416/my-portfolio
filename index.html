@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -76,6 +76,17 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://sarker-portfolio.netlify.app/" />
+
+    <!-- Theme init: prevent flash of wrong theme -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('theme');
+        // CSS inverted: 'dark' class = light visual, no class = dark visual
+        if (saved === 'light') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
