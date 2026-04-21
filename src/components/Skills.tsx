@@ -1,5 +1,5 @@
 const SkillCard = ({ title, skills }: { title: string; skills: string[] }) => (
-  <div className="bg-gray-900 dark:bg-gray-200 p-6 rounded-xl border border-gray-800 dark:border-gray-300 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-colors h-full flex flex-col">
+  <div className="bg-gray-900 dark:bg-gray-200 p-4 sm:p-6 rounded-xl border border-gray-800 dark:border-gray-300 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-colors h-full flex flex-col">
     <h3 className="text-xl font-semibold mb-4 text-cyan-400 dark:text-cyan-600">{title}</h3>
     <div className="flex flex-wrap gap-2 content-start">
       {skills.map((skill) => (
@@ -61,7 +61,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gray-900 dark:bg-gray-100 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white dark:text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-white dark:text-gray-900">
           Technical Skills
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

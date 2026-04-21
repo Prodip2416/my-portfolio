@@ -20,17 +20,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-float">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
               Full-Stack Developer
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-700 mb-8 animate-slide-up">
+            <p className="text-base sm:text-xl md:text-2xl text-gray-300 dark:text-gray-700 mb-8 animate-slide-up px-2">
               React.js • Next.js • NestJS • TypeScript | 5+ Years | Open to Remote
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 animate-slide-up-delay-1">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 animate-slide-up-delay-1">
             <a
               href="#projects"
-              className="px-8 py-3 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2 font-semibold group hover:scale-105 hover:shadow-lg animate-pulse-slow"
+              className="px-5 sm:px-8 py-2.5 sm:py-3 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2 font-semibold group hover:scale-105 hover:shadow-lg animate-pulse-slow"
             >
               View My Work
               <ArrowRight
@@ -40,7 +40,7 @@ const Hero = () => {
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 border-2 border-cyan-500 text-cyan-400 dark:text-cyan-600 rounded-full hover:bg-cyan-500/10 dark:hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              className="px-5 sm:px-8 py-2.5 sm:py-3 border-2 border-cyan-500 text-cyan-400 dark:text-cyan-600 rounded-full hover:bg-cyan-500/10 dark:hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
             >
               <span className="group-hover:animate-pulse">Contact Me</span>
             </a>

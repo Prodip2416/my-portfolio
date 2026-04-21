@@ -1,5 +1,4 @@
-import React from 'react';
-import { ExternalLink, Github, Calendar, Code2 } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { getFeaturedProjects } from '../data/portfolioData';
 import { trackPortfolioEvent } from '../utils/analytics';
 
@@ -27,7 +26,7 @@ const ProjectCard = ({
       <img
         src={image}
         alt={title}
-        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+        className="w-full h-36 sm:h-44 md:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="absolute top-4 left-4 flex gap-2">
@@ -98,7 +97,7 @@ const Projects = () => {
       className="py-20 bg-gray-900 dark:bg-gray-50 transition-colors duration-300"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white dark:text-gray-900 animate-fade-in">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-white dark:text-gray-900 animate-fade-in">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -13,11 +13,11 @@ const About = () => {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Profile Image and Basic Info */}
             <div className="text-center lg:text-left">
               <div className="relative inline-block mb-8 group">
-                <div className="w-64 h-64 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 p-1 animate-pulse-slow group-hover:animate-glow">
+                <div className="w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 mx-auto md:mx-0 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 p-1 animate-pulse-slow group-hover:animate-glow">
                   <div className="w-full h-full rounded-full overflow-hidden transition-colors duration-300">
                     <img
                       src="/profile.jpg"
@@ -47,13 +47,13 @@ const About = () => {
                 </div>
               </div>
 
-              <h2 className="text-4xl font-bold mb-4 text-white dark:text-gray-900 animate-fade-in">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white dark:text-gray-900 animate-fade-in">
                 Hi, I'm{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 animate-gradient">
                   Prodip Sarker
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 dark:text-gray-600 mb-6 animate-slide-up-delay-1">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 dark:text-gray-600 mb-6 animate-slide-up-delay-1">
                 Full Stack Developer
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 dark:text-gray-500 mb-8 animate-slide-up-delay-2">

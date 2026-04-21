@@ -20,12 +20,12 @@ const ExperienceItem = ({
   achievements: string[];
   techStack: string[];
 }) => (
-  <div className="relative pl-8 pb-12 border-l-2 border-gray-800 dark:border-gray-300 last:border-l-0 group">
+  <div className="relative pl-5 sm:pl-8 pb-12 border-l-2 border-gray-800 dark:border-gray-300 last:border-l-0 group">
     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full group-hover:scale-125 group-hover:bg-cyan-400 transition-all" />
     <div className="mb-4 transform transition-all duration-300 hover:translate-x-2">
       <div className="flex items-center gap-2 mb-1">
         <Building2 className="w-5 h-5 text-cyan-400 dark:text-cyan-600" />
-        <h3 className="text-2xl font-bold text-white dark:text-gray-900">{role}</h3>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white dark:text-gray-900">{role}</h3>
       </div>
       <div className="flex items-center gap-2 text-cyan-400 dark:text-cyan-600 font-medium">
         <Trophy className="w-4 h-4" />
@@ -146,7 +146,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-gray-950 dark:bg-gray-100 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white dark:text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 text-white dark:text-gray-900">
           Work Experience
         </h2>
         <p className="text-gray-400 dark:text-gray-600 text-center mb-12 max-w-2xl mx-auto">

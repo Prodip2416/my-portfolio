@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
   Menu,
   X,
@@ -8,14 +8,14 @@ import {
   Code2,
   Layers,
   Terminal,
-  Database,
   Briefcase,
   User,
+  MessageCircle,
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { href: '#about', label: 'About', icon: User },
@@ -78,7 +78,7 @@ const Header = () => {
               href="#contact"
               className="px-4 py-2 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-colors font-medium flex items-center gap-2"
             >
-              <Database className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               Hire Me
             </a>
           </div>
@@ -107,7 +107,7 @@ const Header = () => {
               ))}
               <div className="flex items-center gap-4 pt-4 border-t border-gray-800">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/prodip2416"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
@@ -115,7 +115,7 @@ const Header = () => {
                   <Github size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/prodip2416/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
@@ -123,7 +123,7 @@ const Header = () => {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:prodip.sarker.cse@gmail.com"
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
                 >
                   <Mail size={20} />
