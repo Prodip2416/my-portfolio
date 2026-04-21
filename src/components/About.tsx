@@ -2,21 +2,10 @@ import {
   Download,
   MapPin,
   Calendar,
-  Award,
-  Users,
-  Zap,
-  FolderOpen,
 } from 'lucide-react';
 import { trackPortfolioEvent } from '../utils/analytics';
 
 const About = () => {
-  const stats = [
-    { icon: FolderOpen, label: 'Projects Completed', value: '50+' },
-    { icon: Users, label: 'Team Members Mentored', value: '5+' },
-    { icon: Zap, label: 'Performance Improvement', value: '40%' },
-    { icon: Award, label: 'Awards Received', value: '3' },
-  ];
-
   return (
     <section
       id="about"
@@ -32,21 +21,16 @@ const About = () => {
                   <div className="w-full h-full rounded-full overflow-hidden transition-colors duration-300">
                     <img
                       src="/profile.jpg"
-                      alt="Prodip Sarker - Software Specialist"
+                      alt="Prodip Sarker - Full Stack Developer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onLoad={() => console.log('✅ Profile image loaded successfully!')}
                       onError={(e) => {
-                        console.log('❌ Profile image failed to load');
-                        console.log('Trying to load:', e.target.src);
-                        console.log('Full URL:', window.location.href + 'profile.jpg');
-                        // Fallback to icon if image not found
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
                         const parent = target.parentElement;
                         if (parent) {
                           parent.innerHTML = `
                             <div class="w-full h-full bg-gray-900 dark:bg-gray-200 flex items-center justify-center">
-                              <div class="w-60 h-60 rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                              <div class="w-60 h-60 rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center">
                                 <svg class="w-32 h-32 text-cyan-400 dark:text-cyan-600 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                                 </svg>
@@ -70,14 +54,14 @@ const About = () => {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 dark:text-gray-600 mb-6 animate-slide-up-delay-1">
-                Software Specialist at SSL Wireless
+                Full Stack Developer
               </p>
               <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 dark:text-gray-500 mb-8 animate-slide-up-delay-2">
                 <MapPin className="w-5 h-5" />
                 <span>Dhaka, Bangladesh</span>
                 <span>•</span>
                 <Calendar className="w-5 h-5" />
-                <span>4+ Years Experience</span>
+                <span>5+ Years Experience</span>
               </div>
             </div>
 
@@ -92,46 +76,28 @@ const About = () => {
                   <span className="text-cyan-400 font-semibold">
                     Full Stack Developer
                   </span>{' '}
-                  with 4+ years of experience building scalable web
-                  applications. I specialize in{' '}
+                  with{' '}
                   <span className="text-purple-400 font-semibold">
-                    React, Node.js, and TypeScript
-                  </span>
-                  , and I love creating solutions that make a real impact.
+                    5+ years of experience
+                  </span>{' '}
+                  building scalable, production-ready web applications. I
+                  specialize in{' '}
+                  <span className="text-cyan-400 font-semibold">
+                    JavaScript & TypeScript
+                  </span>{' '}
+                  across the entire stack — from crafting dynamic UIs with{' '}
+                  <span className="text-purple-400 font-semibold">
+                    React.js & Next.js
+                  </span>{' '}
+                  to architecting robust backends with{' '}
+                  <span className="text-cyan-400 font-semibold">NestJS</span>.
                 </p>
                 <p className="text-gray-300 dark:text-gray-600 text-lg leading-relaxed">
-                  Currently working as a{' '}
-                  <span className="text-cyan-400 font-semibold">
-                    Software Specialist at SSL Wireless
-                  </span>
-                  , where I lead development teams and architect
-                  enterprise-scale applications. I'm passionate about mentoring
-                  junior developers and staying up-to-date with the latest
-                  technologies.
+                  I thrive on turning complex problems into clean, efficient
+                  solutions. Whether it's building APIs, optimizing performance,
+                  or delivering pixel-perfect interfaces — I bring full ownership
+                  to every layer of the stack. Always learning, always shipping.
                 </p>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-900 dark:bg-gray-200 p-4 rounded-lg border border-gray-800 dark:border-gray-300 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg dark:hover:shadow-xl group"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <stat.icon className="w-6 h-6 text-cyan-400 dark:text-cyan-600 group-hover:animate-spin-slow" />
-                      <div>
-                        <div className="text-2xl font-bold text-white dark:text-gray-900 group-hover:text-cyan-400 dark:group-hover:text-cyan-600 transition-colors">
-                          {stat.value}
-                        </div>
-                        <div className="text-sm text-gray-400 dark:text-gray-600">
-                          {stat.label}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
 
               {/* CTA Buttons */}
