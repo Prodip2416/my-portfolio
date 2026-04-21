@@ -103,7 +103,7 @@ const About = () => {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="/resume/Prodip_Sarker_Resume.pdf"
+                  href="/resume/Prodip Sarker.pdf"
                   download
                   className="px-6 py-3 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2 font-semibold hover:scale-105 hover:shadow-lg group"
                   onClick={() => trackPortfolioEvent.resumeDownload()}
