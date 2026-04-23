@@ -1,12 +1,22 @@
-import {
-  Github,
-  GitBranch,
-  Star,
-  Calendar,
-  ExternalLink,
-} from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { Github, GitBranch, Star, Calendar, ExternalLink } from 'lucide-react';
 import { useGitHub } from '../hooks/useGitHub';
 import { LoadingSpinner, ErrorState } from './LoadingStates';
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const scaleIn: Variants = {
+  hidden: { opacity: 0, scale: 0.92, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const stagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 const GitHubStats = () => {
   const { user, repos, loading, error } = useGitHub();
@@ -46,28 +56,34 @@ const GitHubStats = () => {
     );
   }
 
-  const totalStars = repos.reduce(
-    (sum, repo) => sum + repo.stargazers_count,
-    0
-  );
+  const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
   const yearsOnGitHub = user
-    ? Math.floor(
-        (Date.now() - new Date(user.created_at).getTime()) /
-          (1000 * 60 * 60 * 24 * 365)
-      )
+    ? Math.floor((Date.now() - new Date(user.created_at).getTime()) / (1000 * 60 * 60 * 24 * 365))
     : 0;
 
   return (
-    <section className="py-20 bg-gray-900 dark:bg-gray-50 transition-colors duration-300">
+    <section className="pt-20 pb-10 bg-gray-900 dark:bg-gray-50 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-white dark:text-gray-900 animate-fade-in">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-white dark:text-gray-900"
+          >
             GitHub Activity
-          </h2>
+          </motion.h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* GitHub Stats Cards */}
-            <a
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <motion.a
+              variants={scaleIn}
               href={user?.html_url || 'https://github.com/prodip2416'}
               target="_blank"
               rel="noopener noreferrer"
@@ -75,19 +91,14 @@ const GitHubStats = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Github className="w-6 h-6 text-cyan-400" />
-                <h3 className="text-lg font-semibold text-white dark:text-gray-900">
-                  Repositories
-                </h3>
+                <h3 className="text-lg font-semibold text-white dark:text-gray-900">Repositories</h3>
               </div>
-              <div className="text-3xl font-bold text-cyan-400 dark:text-cyan-600 mb-2">
-                {user?.public_repos || 0}
-              </div>
-              <p className="text-gray-400 dark:text-gray-600 text-sm">
-                Public repositories
-              </p>
-            </a>
+              <div className="text-3xl font-bold text-cyan-400 dark:text-cyan-600 mb-2">{user?.public_repos || 0}</div>
+              <p className="text-gray-400 dark:text-gray-600 text-sm">Public repositories</p>
+            </motion.a>
 
-            <a
+            <motion.a
+              variants={scaleIn}
               href={user?.html_url || 'https://github.com/prodip2416'}
               target="_blank"
               rel="noopener noreferrer"
@@ -95,19 +106,14 @@ const GitHubStats = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Star className="w-6 h-6 text-yellow-400" />
-                <h3 className="text-lg font-semibold text-white dark:text-gray-900">
-                  Stars
-                </h3>
+                <h3 className="text-lg font-semibold text-white dark:text-gray-900">Stars</h3>
               </div>
-              <div className="text-3xl font-bold text-yellow-400 dark:text-yellow-600 mb-2">
-                {totalStars}
-              </div>
-              <p className="text-gray-400 dark:text-gray-600 text-sm">
-                Total stars received
-              </p>
-            </a>
+              <div className="text-3xl font-bold text-yellow-400 dark:text-yellow-600 mb-2">{totalStars}</div>
+              <p className="text-gray-400 dark:text-gray-600 text-sm">Total stars received</p>
+            </motion.a>
 
-            <a
+            <motion.a
+              variants={scaleIn}
               href={`${user?.html_url || 'https://github.com/prodip2416'}?tab=followers`}
               target="_blank"
               rel="noopener noreferrer"
@@ -115,19 +121,14 @@ const GitHubStats = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <GitBranch className="w-6 h-6 text-green-400" />
-                <h3 className="text-lg font-semibold text-white dark:text-gray-900">
-                  Followers
-                </h3>
+                <h3 className="text-lg font-semibold text-white dark:text-gray-900">Followers</h3>
               </div>
-              <div className="text-3xl font-bold text-green-400 dark:text-green-600 mb-2">
-                {user?.followers || 0}
-              </div>
-              <p className="text-gray-400 dark:text-gray-600 text-sm">
-                GitHub followers
-              </p>
-            </a>
+              <div className="text-3xl font-bold text-green-400 dark:text-green-600 mb-2">{user?.followers || 0}</div>
+              <p className="text-gray-400 dark:text-gray-600 text-sm">GitHub followers</p>
+            </motion.a>
 
-            <a
+            <motion.a
+              variants={scaleIn}
               href={user?.html_url || 'https://github.com/prodip2416'}
               target="_blank"
               rel="noopener noreferrer"
@@ -135,21 +136,20 @@ const GitHubStats = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="w-6 h-6 text-purple-400" />
-                <h3 className="text-lg font-semibold text-white dark:text-gray-900">
-                  Experience
-                </h3>
+                <h3 className="text-lg font-semibold text-white dark:text-gray-900">Experience</h3>
               </div>
-              <div className="text-3xl font-bold text-purple-400 dark:text-purple-600 mb-2">
-                {yearsOnGitHub}+
-              </div>
-              <p className="text-gray-400 dark:text-gray-600 text-sm">
-                Years on GitHub
-              </p>
-            </a>
-          </div>
+              <div className="text-3xl font-bold text-purple-400 dark:text-purple-600 mb-2">{yearsOnGitHub}+</div>
+              <p className="text-gray-400 dark:text-gray-600 text-sm">Years on GitHub</p>
+            </motion.a>
+          </motion.div>
 
-          {/* GitHub Contribution Graph */}
-          <div className="mt-12 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="mt-12 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200"
+          >
             <h3 className="text-xl font-semibold text-white dark:text-gray-900 mb-4 text-center">
               Contribution Activity
             </h3>
@@ -161,14 +161,20 @@ const GitHubStats = () => {
                 className="w-full max-w-4xl rounded-lg"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.parentElement!.innerHTML = '<p class="text-gray-400 text-center py-8">Activity graph unavailable. <a href="https://github.com/prodip2416" target="_blank" class="text-cyan-400 hover:underline">View on GitHub →</a></p>';
+                  target.parentElement!.innerHTML =
+                    '<p class="text-gray-400 text-center py-8">Activity graph unavailable. <a href="https://github.com/prodip2416" target="_blank" class="text-cyan-400 hover:underline">View on GitHub →</a></p>';
                 }}
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* GitHub Stats */}
-          <div className="mt-8 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="mt-8 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200"
+          >
             <h3 className="text-xl font-semibold text-white dark:text-gray-900 mb-4 text-center">
               GitHub Statistics
             </h3>
@@ -179,21 +185,36 @@ const GitHubStats = () => {
                 className="w-full max-w-2xl rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* View All Repositories Button */}
-          <div className="mt-8 text-center">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="mt-8 text-center"
+          >
             <a
               href="https://github.com/prodip2416"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              className="relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 text-gray-900 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 group"
             >
-              <Github className="w-5 h-5 group-hover:animate-bounce" />
-              View All Repositories
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <motion.span
+                className="absolute inset-0 bg-cyan-500 rounded-full"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                style={{ originX: 0 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
+              />
+              <span className="relative z-10 flex items-center gap-2">
+                <Github className="w-5 h-5 group-hover:animate-bounce" />
+                View All Repositories
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

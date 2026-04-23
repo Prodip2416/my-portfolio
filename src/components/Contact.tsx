@@ -2,9 +2,14 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { trackPortfolioEvent } from '../utils/analytics';
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+};
+
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="pt-10 pb-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,87 +22,72 @@ const Contact = () => {
             Let's Connect
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            I'm always interested in hearing about new projects and
-            opportunities.
+            I'm always interested in hearing about new projects and opportunities.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+        >
           <motion.a
+            variants={cardVariants}
+            whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.2 } }}
+            whileTap={{ scale: 0.97 }}
             href="mailto:prodip.sarker.cse@gmail.com"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-colors cursor-pointer"
             onClick={() => trackPortfolioEvent.emailClick()}
           >
             <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
-              Email
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base text-center">
-              prodip.sarker.cse@gmail.com
-            </p>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">Email</h3>
+            <p className="text-gray-400 text-sm sm:text-base text-center">prodip.sarker.cse@gmail.com</p>
           </motion.a>
 
           <motion.a
+            variants={cardVariants}
+            whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.2 } }}
+            whileTap={{ scale: 0.97 }}
             href="https://www.linkedin.com/in/prodip2416/"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-colors cursor-pointer"
             onClick={() => trackPortfolioEvent.linkedinClick()}
           >
             <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
-              LinkedIn
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base text-center">
-              Connect professionally
-            </p>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">LinkedIn</h3>
+            <p className="text-gray-400 text-sm sm:text-base text-center">Connect professionally</p>
           </motion.a>
 
           <motion.a
+            variants={cardVariants}
+            whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.2 } }}
+            whileTap={{ scale: 0.97 }}
             href="https://github.com/prodip2416"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-colors cursor-pointer"
             onClick={() => trackPortfolioEvent.githubClick()}
           >
             <Github className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
-              GitHub
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base text-center">
-              Check out my code
-            </p>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">GitHub</h3>
+            <p className="text-gray-400 text-sm sm:text-base text-center">Check out my code</p>
           </motion.a>
 
           <motion.a
+            variants={cardVariants}
+            whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.2 } }}
+            whileTap={{ scale: 0.97 }}
             href="tel:+8801744610807"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-all"
+            className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border-2 border-transparent hover:border-cyan-500/50 transition-colors cursor-pointer"
           >
             <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mb-4 mx-auto" />
-            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">
-              WhatsApp
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base text-center">
-              +880 1744 610 807
-            </p>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white text-center">WhatsApp</h3>
+            <p className="text-gray-400 text-sm sm:text-base text-center">+880 1744 610 807</p>
           </motion.a>
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -114,9 +104,7 @@ const Contact = () => {
           </p>
           <div className="inline-flex items-center space-x-2 text-gray-400">
             <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
-            <span className="text-sm sm:text-base">
-              Available for relocation
-            </span>
+            <span className="text-sm sm:text-base">Available for relocation</span>
           </div>
         </motion.div>
       </div>

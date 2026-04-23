@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   Menu,
   X,
-  Github,
+  LucideGithub,
   Linkedin,
   Mail,
   Code2,
@@ -10,7 +10,6 @@ import {
   Terminal,
   Briefcase,
   User,
-  MessageCircle,
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
@@ -58,7 +57,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="p-2 text-gray-400 hover:text-cyan-400 transition-colors hover:scale-110 transform"
             >
-              <Github size={20} />
+              <LucideGithub size={20} />
             </a>
             <a
               href="https://www.linkedin.com/in/prodip2416/"
@@ -76,9 +75,8 @@ const Header = () => {
             </a>
             <a
               href="#contact"
-              className="px-4 py-2 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-colors font-medium flex items-center gap-2"
+              className="px-4 py-2 bg-cyan-500 text-gray-900 rounded-full hover:bg-cyan-400 transition-colors font-medium"
             >
-              <MessageCircle className="w-4 h-4" />
               Hire Me
             </a>
           </div>
@@ -112,7 +110,7 @@ const Header = () => {
                   rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
                 >
-                  <Github size={20} />
+                  <LucideGithub size={20} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/prodip2416/"
