@@ -60,23 +60,81 @@ export const portfolioData = {
   // Projects - Add new projects here
   projects: [
     {
+      title: 'LinguaGuard',
+      description:
+        'MCP server for i18n management — detect missing keys, unused translations, and sync across languages via Claude AI.',
+      image:
+        'https://repository-images.githubusercontent.com/1201324605/8fbceb02-89f9-47f4-b571-2a1939a3811b',
+      tech: ['TypeScript', 'MCP', 'Claude AI', 'i18n', 'Node.js'],
+      demoLink: 'https://mcpize.com/mcp/linguaguard',
+      githubLink: 'https://github.com/Prodip2416/linguaguard',
+      featured: true,
+      category: 'AI',
+      status: 'Live',
+    },
+    {
+      title: 'Tailwind Kit',
+      description:
+        'Component library with 80+ React elements built with Tailwind CSS, featuring responsive design and dark mode functionality.',
+      image:
+        'https://repository-images.githubusercontent.com/1074318925/ac0c1106-a0c7-496f-b709-ddc8e0d4da53',
+      tech: ['React', 'Tailwind CSS', 'JavaScript', 'Storybook'],
+      demoLink: 'https://prodip2416.github.io/tailwind-kit/',
+      githubLink: 'https://github.com/Prodip2416/tailwind-kit',
+      featured: true,
+      category: 'Frontend',
+      status: 'Live',
+    },
+    {
+      title: 'NestJS Auth Kit',
+      description:
+        'Minimal NestJS Auth Kit for building JWT-protected REST APIs with a clean modular architecture.',
+      image:
+        'https://repository-images.githubusercontent.com/1166701976/96cfa807-94af-4247-8fba-86007b1b3e08',
+      tech: ['NestJS', 'TypeScript', 'JWT', 'REST API', 'PostgreSQL'],
+      demoLink: '',
+      githubLink: 'https://github.com/Prodip2416/nestjs-auth-kit',
+      featured: true,
+      category: 'Backend',
+      status: 'Live',
+    },
+    {
+      title: 'AI Text Summarization',
+      description:
+        'React application utilizing three AI models for text summarization, including sentiment analysis and export functionality.',
+      image:
+        'https://repository-images.githubusercontent.com/1074235421/6768a7b8-d896-44a6-9b69-2ac30a605ebf',
+      tech: ['React', 'JavaScript', 'AI APIs', 'Sentiment Analysis'],
+      demoLink: 'https://prodip2416.github.io/ai-text-summarization/',
+      githubLink: 'https://github.com/Prodip2416/ai-text-summarization',
+      featured: true,
+      category: 'AI',
+      status: 'Live',
+    },
+    {
       title: 'Data Insights Hub',
       description:
         'Modern React dashboard with 8+ chart types, professional exports, theming, and responsive design for data visualization and business analytics',
       image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-      tech: [
-        'React',
-        'TypeScript',
-        'Chart.js',
-        'D3.js',
-        'Tailwind CSS',
-        'Vite',
-      ],
+        'https://repository-images.githubusercontent.com/1055931234/f7e2ade7-abd7-400a-9827-d5944bfe30bd',
+      tech: ['React', 'TypeScript', 'Chart.js', 'D3.js', 'Tailwind CSS', 'Vite'],
       demoLink: 'https://prodip2416.github.io/data-insights-hub/',
       githubLink: 'https://github.com/Prodip2416/data-insights-hub',
       featured: true,
-      category: 'Full Stack',
+      category: 'Frontend',
+      status: 'Live',
+    },
+    {
+      title: 'My Portfolio',
+      description:
+        'Personal portfolio displaying 5+ years of expertise in JavaScript, TypeScript, React.js, Next.js, NestJS, and modern frontend development.',
+      image:
+        'https://repository-images.githubusercontent.com/308957560/ec643ef6-7627-42db-b7c0-289ded8298c8',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      demoLink: 'https://sarker-portfolio.netlify.app/',
+      githubLink: 'https://github.com/Prodip2416/my-portfolio',
+      featured: true,
+      category: 'Frontend',
       status: 'Live',
     },
     {
@@ -88,7 +146,7 @@ export const portfolioData = {
       tech: ['Node.js', 'Express.js', 'MySQL', 'Sequelize', 'React'],
       demoLink: 'https://github.com/Prodip2416/e-com-service',
       githubLink: 'https://github.com/Prodip2416/e-com-service',
-      featured: true,
+      featured: false,
       category: 'Backend',
       status: 'Live',
     },
@@ -101,7 +159,7 @@ export const portfolioData = {
       tech: ['React', 'Redux', 'Ant Design', 'Tailwind CSS', 'JavaScript'],
       demoLink: 'https://prodip2416.github.io/RRAT_Stack/',
       githubLink: 'https://github.com/Prodip2416/RRAT_Stack',
-      featured: true,
+      featured: false,
       category: 'Frontend',
       status: 'Live',
     },
@@ -118,18 +176,6 @@ export const portfolioData = {
       category: 'Learning',
       status: 'Live',
     },
-    // Add new projects here as you create them
-    // {
-    //   title: 'Your New Project',
-    //   description: 'Description of your new project',
-    //   image: 'project-image-url',
-    //   tech: ['React', 'Node.js', 'TypeScript'],
-    //   demoLink: 'live-demo-url',
-    //   githubLink: 'github-repo-url',
-    //   featured: true,
-    //   category: 'Full Stack',
-    //   status: 'Live',
-    // },
   ],
 
   // Experience - Update as you progress
