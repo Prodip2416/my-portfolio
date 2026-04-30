@@ -1,156 +1,186 @@
-# 🚀 Prodip Sarker's Portfolio
+# Prodip Sarker - Full Stack Developer Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases my professional experience, projects, skills, and achievements as a Software Specialist.
+A modern, responsive portfolio website for **Prodip Sarker**, a Full Stack Developer based in Dhaka, Bangladesh. The site presents my professional experience, technical stack, featured projects, GitHub activity, resume, and contact information in one recruiter-friendly place.
 
-## 🌟 Live Demo
+**Live Portfolio:** [https://sarker-portfolio.netlify.app/](https://sarker-portfolio.netlify.app/)
 
-**Portfolio Website:** [https://sarker-portfolio.netlify.app/](https://sarker-portfolio.netlify.app/)
+## Recruiter Snapshot
 
-## ✨ Features
+- **Current Role:** Software Specialist at SSL Wireless
+- **Experience:** 5+ years building production web applications
+- **Primary Stack:** JavaScript, TypeScript, React.js, Next.js, Node.js, NestJS
+- **Frontend Focus:** Responsive UI, dashboard interfaces, component systems, performance optimization
+- **Backend Focus:** REST APIs, authentication, RBAC, TypeORM, MySQL/PostgreSQL, API integrations
+- **Location:** Dhaka, Bangladesh
+- **Availability:** Open to remote opportunities
 
-- **Modern Design**: Clean, professional UI with smooth animations
-- **Responsive Layout**: Optimized for all devices and screen sizes
-- **Dark/Light Theme**: Toggle between themes for better user experience
-- **Interactive Components**: Animated sections and smooth scrolling
-- **GitHub Integration**: Real-time GitHub stats and repository information
-- **Performance Optimized**: Fast loading with Vite build tool
-- **TypeScript**: Full type safety and better development experience
-- **Accessibility**: WCAG compliant design patterns
+## What This Portfolio Shows
 
-## 🛠️ Tech Stack
+This portfolio is designed to give recruiters and hiring teams a fast view of:
 
-### Frontend
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Smooth animations and transitions
-- **Lucide React** - Beautiful, customizable icons
-- **Vite** - Fast build tool and development server
+- My professional background and current role
+- Technologies I use across frontend, backend, and tooling
+- Production-focused projects with live demos and source links
+- GitHub activity and repository highlights
+- Resume download and direct contact options
 
-### Development Tools
-- **ESLint** - Code linting and formatting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - Automatic vendor prefixes
+## Tech Stack
 
-## 📁 Project Structure
+### Portfolio Website
 
-```
+- **React 18** for the UI
+- **TypeScript** for type safety
+- **Tailwind CSS** for responsive styling
+- **Framer Motion** for section animations
+- **Lucide React** for icons
+- **Vite** for fast development and production builds
+
+### My Working Stack
+
+**Frontend:** JavaScript, TypeScript, React.js, Next.js, Redux, Zustand, Tailwind CSS, Ant Design, HTML5, CSS3, React Hook Form, Axios
+
+**Backend:** Node.js, NestJS, RESTful APIs, Socket.io, MySQL, PostgreSQL, TypeORM, JWT authentication, RBAC, API integration
+
+**Tools:** Git, GitHub, VS Code, npm/yarn, Postman, Chrome DevTools, Jira, Figma, Linux/Bash, Claude AI, Cursor, ChatGPT
+
+## Professional Experience
+
+### Software Specialist - SSL Wireless
+
+**2023 - Present**
+
+- Build and maintain enterprise-scale React.js and Next.js applications with TypeScript
+- Develop REST APIs using NestJS, TypeORM, JWT authentication, and RBAC
+- Collaborate with UI/UX teams to deliver responsive interfaces using Ant Design and Tailwind CSS
+- Integrate real-time features with Socket.io and data visualization with Chart.js
+- Review code, improve development standards, and mentor junior developers
+
+### Software Engineer - Apsis Solutions Ltd.
+
+**2020 - 2023**
+
+- Delivered client-facing web applications using React.js and Next.js
+- Built backend services with Node.js and NestJS
+- Integrated third-party APIs and payment-related workflows
+- Improved performance using lazy loading, code splitting, and frontend optimization
+- Worked in agile teams with sprint planning, code review, and release delivery
+
+### Junior Software Engineer - Al-Hiyal Software
+
+**2018 - 2020**
+
+- Built web applications using C# and ASP.NET Web Forms
+- Worked with Entity Framework, LINQ, SQL Server, and stored procedures
+- Learned strong software development fundamentals, version control, and team collaboration
+
+## Featured Projects
+
+### LinguaGuard
+
+MCP server for i18n management that helps detect missing keys, unused translations, and language sync issues.
+
+- **Tech:** TypeScript, MCP, Claude AI, i18n, Node.js
+- **Demo:** [https://mcpize.com/mcp/linguaguard](https://mcpize.com/mcp/linguaguard)
+- **GitHub:** [https://github.com/Prodip2416/linguaguard](https://github.com/Prodip2416/linguaguard)
+
+### Tailwind Kit
+
+React component library with 80+ Tailwind CSS elements, responsive design, and dark mode support.
+
+- **Tech:** React, Tailwind CSS, JavaScript, Storybook
+- **Demo:** [https://prodip2416.github.io/tailwind-kit/](https://prodip2416.github.io/tailwind-kit/)
+- **GitHub:** [https://github.com/Prodip2416/tailwind-kit](https://github.com/Prodip2416/tailwind-kit)
+
+### NestJS Auth Kit
+
+Minimal authentication starter for JWT-protected REST APIs with clean modular architecture.
+
+- **Tech:** NestJS, TypeScript, JWT, REST API, PostgreSQL
+- **GitHub:** [https://github.com/Prodip2416/nestjs-auth-kit](https://github.com/Prodip2416/nestjs-auth-kit)
+
+### Data Insights Hub
+
+Modern analytics dashboard with multiple chart types, export features, responsive layout, and theme support.
+
+- **Tech:** React, TypeScript, Chart.js, D3.js, Tailwind CSS, Vite
+- **Demo:** [https://prodip2416.github.io/data-insights-hub/](https://prodip2416.github.io/data-insights-hub/)
+- **GitHub:** [https://github.com/Prodip2416/data-insights-hub](https://github.com/Prodip2416/data-insights-hub)
+
+## Key Highlights
+
+- Reduced application load time by **40%**
+- Delivered **5** projects ahead of schedule
+- Achieved up to **90%** automated test coverage
+- Mentored **15+** junior developers
+- Improved client satisfaction score to **95%**
+- Reduced bug reports by **60%**
+
+## Project Features
+
+- Responsive layout for desktop, tablet, and mobile
+- Dark/light theme toggle
+- Fancy glass-style header with active section tracking
+- Animated hero, about, skills, experience, and project sections
+- GitHub stats integration
+- Resume download
+- SEO, Open Graph, Twitter card, and structured data metadata
+- Custom favicon and professional visual identity
+
+## Project Structure
+
+```text
 src/
-├── components/          # Reusable UI components
-│   ├── About.tsx       # About section
-│   ├── Achievements.tsx # Achievements and stats
-│   ├── Contact.tsx     # Contact form
-│   ├── Experience.tsx  # Work experience
-│   ├── GitHubStats.tsx # GitHub statistics
-│   ├── Header.tsx      # Navigation header
-│   ├── Hero.tsx        # Hero section
-│   ├── Projects.tsx    # Projects showcase
-│   ├── Skills.tsx      # Skills section
-│   └── ThemeToggle.tsx # Theme switcher
-├── contexts/           # React contexts
-│   └── ThemeContext.tsx # Theme management
-├── data/               # Static data
-│   └── portfolioData.ts # Portfolio information
-├── hooks/              # Custom React hooks
-│   ├── useGitHub.ts    # GitHub API integration
-│   └── usePerformance.ts # Performance monitoring
-├── utils/              # Utility functions
-│   └── analytics.ts    # Analytics tracking
-└── App.tsx             # Main application component
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── GitHubStats.tsx
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   └── ThemeToggle.tsx
+├── contexts/
+│   └── ThemeContext.tsx
+├── data/
+│   └── portfolioData.ts
+├── hooks/
+│   └── useGitHub.ts
+├── utils/
+│   └── analytics.ts
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- **Node.js** (v16 or higher)
-- **npm** (v8 or higher)
+- Node.js 18 or higher
+- npm
 
 ### Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/prodip2416/my-portfolio.git
-   cd my-portfolio
-   ```
+```bash
+git clone https://github.com/prodip2416/my-portfolio.git
+cd my-portfolio
+npm install
+npm run dev
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+Open `http://localhost:5173` in your browser.
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+## Available Scripts
 
-4. **Open your browser:**
-   Navigate to `http://localhost:5173`
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## 🎯 Featured Projects
-
-### Data Insights Hub
-Modern React dashboard with 8+ chart types, professional exports, and theming for data visualization.
-
-- **Tech Stack:** React, TypeScript, Chart.js, D3.js, Tailwind CSS
-- **Live Demo:** [https://prodip2416.github.io/data-insights-hub/](https://prodip2416.github.io/data-insights-hub/)
-- **GitHub:** [https://github.com/Prodip2416/data-insights-hub](https://github.com/Prodip2416/data-insights-hub)
-
-### E-commerce Starter
-Comprehensive e-commerce solution with real-time inventory management and payment integration.
-
-- **Tech Stack:** Node.js, Express.js, MySQL, Sequelize, React
-- **GitHub:** [https://github.com/Prodip2416/e-com-service](https://github.com/Prodip2416/e-com-service)
-
-### RRAT Stack Boilerplate
-Cutting-edge boilerplate with React, Redux, Ant Design, and Tailwind CSS.
-
-- **Tech Stack:** React, Redux, Ant Design, Tailwind CSS
-- **Live Demo:** [https://prodip2416.github.io/RRAT_Stack/](https://prodip2416.github.io/RRAT_Stack/)
-- **GitHub:** [https://github.com/Prodip2416/RRAT_Stack](https://github.com/Prodip2416/RRAT_Stack)
-
-## 👨‍💻 About Me
-
-**Prodip Sarker** - Software Specialist at SSL Wireless
-
-- **Experience:** 4+ Years in Software Development
-- **Location:** Dhaka, Bangladesh
-- **Specialization:** Full-Stack Development, React, Node.js, TypeScript
-
-### Professional Experience
-
-- **Software Specialist** at SSL Wireless (2023 - Present)
-- **Software Engineer** at Apsis Solutions Ltd. (2020 - 2023)
-- **Junior Software Engineer** at Al-Hiyal Software (2018 - 2020)
-
-### Key Achievements
-
-- 🚀 **40%** reduction in application load time
-- 🎯 **5** projects delivered ahead of schedule
-- 🧪 **90%** automated testing coverage
-- 👥 **15+** junior developers mentored
-- ⭐ **95%** client satisfaction score
-- 🐛 **60%** reduction in bug reports
-
-## 🛠️ Skills
-
-### Frontend
-JavaScript, TypeScript, React, Redux, Next.js, Tailwind CSS, Ant Design, HTML5, CSS3, Responsive Design, Chart.js, D3.js
-
-### Backend
-Node.js, Express.js, NestJS, RESTful APIs, MySQL, Authentication, Authorization, C#, ASP.NET, Entity Framework
-
-### Tools & Technologies
-Git, VS Code, npm/yarn, Webpack, Docker, Jest, CI/CD, TFS, AWS
-
-## 📞 Contact
+## Contact
 
 - **Email:** [prodip.sarker.cse@gmail.com](mailto:prodip.sarker.cse@gmail.com)
 - **LinkedIn:** [https://www.linkedin.com/in/prodip2416/](https://www.linkedin.com/in/prodip2416/)
@@ -158,18 +188,10 @@ Git, VS Code, npm/yarn, Webpack, Docker, Jest, CI/CD, TFS, AWS
 - **Twitter:** [https://twitter.com/prodip_diu](https://twitter.com/prodip_diu)
 - **Portfolio:** [https://sarker-portfolio.netlify.app/](https://sarker-portfolio.netlify.app/)
 
-## 📄 License
+## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/prodip2416/my-portfolio/issues).
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!
+This portfolio is maintained as a personal open-source project. Add a `LICENSE` file if you want to publish it under a specific license.
 
 ---
 
-**Built with ❤️ by [Prodip Sarker](https://github.com/prodip2416)**
+Built and maintained by [Prodip Sarker](https://github.com/prodip2416).

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Menu,
   X,
@@ -12,8 +12,14 @@ import {
   User,
   Sparkles,
   ArrowUpRight,
+  Copy,
+  Check,
+  Send,
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+
+const emailAddress = 'prodip.sarker.cse@gmail.com';
+const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
 
 const menuItems = [
   { href: '#about', label: 'About', icon: User },
@@ -25,8 +31,11 @@ const menuItems = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactMenuOpen, setIsContactMenuOpen] = useState(false);
+  const [isEmailCopied, setIsEmailCopied] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const sectionIds = ['home', ...menuItems.map(({ href }) => href.slice(1))];
@@ -55,8 +64,49 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setIsContactMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsContactMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
+
+  const handleCopyEmail = async () => {
+    await navigator.clipboard.writeText(emailAddress);
+    setIsEmailCopied(true);
+
+    window.setTimeout(() => setIsEmailCopied(false), 1800);
+  };
+
+  const handleContactLink = () => {
+    setActiveSection('contact');
+    setIsContactMenuOpen(false);
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4"
+    >
       <nav
         className={`container mx-auto transition-all duration-500 ${
           hasScrolled ? 'max-w-6xl' : 'max-w-7xl'
@@ -150,17 +200,25 @@ const Header = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a
-                href="mailto:prodip.sarker.cse@gmail.com"
-                aria-label="Send email"
-                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-200 hover:shadow-lg hover:shadow-cyan-950/20 dark:border-gray-900/10 dark:bg-gray-900/[0.04] dark:text-gray-700 dark:hover:text-cyan-700"
-              >
-                <Mail size={20} />
-              </a>
+              <div className="relative">
+                <button
+                  type="button"
+                  aria-label="Open contact options"
+                  aria-expanded={isContactMenuOpen}
+                  onClick={() => setIsContactMenuOpen((isOpen) => !isOpen)}
+                  className={`grid h-10 w-10 place-items-center rounded-xl border bg-white/[0.04] text-gray-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-200 hover:shadow-lg hover:shadow-cyan-950/20 dark:bg-gray-900/[0.04] dark:text-gray-700 dark:hover:text-cyan-700 ${
+                    isContactMenuOpen
+                      ? 'border-cyan-300/40 text-cyan-200 dark:border-cyan-700/30 dark:text-cyan-700'
+                      : 'border-white/10 dark:border-gray-900/10'
+                  }`}
+                >
+                  <Mail size={20} />
+                </button>
+              </div>
               <a
                 href="#contact"
                 className="group ml-1 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 px-4 py-2.5 text-sm font-bold text-gray-950 shadow-lg shadow-cyan-950/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cyan-500/30"
-                onClick={() => setActiveSection('contact')}
+                onClick={handleContactLink}
               >
                 <Sparkles className="h-4 w-4" />
                 Hire Me
@@ -170,7 +228,10 @@ const Header = () => {
 
             <button
               className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.06] text-gray-200 transition-all duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-200 dark:border-gray-900/10 dark:bg-gray-900/[0.06] dark:text-gray-800 dark:hover:text-cyan-700 md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+                setIsContactMenuOpen(false);
+              }}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
@@ -178,6 +239,63 @@ const Header = () => {
             </button>
           </div>
         </div>
+
+        {isContactMenuOpen && (
+          <div className="absolute right-3 top-[76px] hidden w-72 overflow-hidden rounded-2xl border border-cyan-300/20 bg-gray-950/95 p-2 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl dark:border-cyan-700/20 dark:bg-white/95 dark:shadow-gray-300/30 md:block">
+            <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+            <div className="px-3 py-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300/70 dark:text-cyan-700/70">
+                Quick Contact
+              </p>
+              <p className="mt-1 truncate text-sm text-gray-300 dark:text-gray-700">
+                {emailAddress}
+              </p>
+            </div>
+            <div className="mt-1 space-y-1">
+              <a
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-xl px-3 py-3 text-sm font-medium text-gray-200 transition-all duration-300 hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                onClick={() => setIsContactMenuOpen(false)}
+              >
+                <span className="flex items-center gap-3">
+                  <Send className="h-4 w-4" />
+                  Open Gmail
+                </span>
+                <ArrowUpRight className="h-4 w-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+              </a>
+              <button
+                type="button"
+                className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-sm font-medium text-gray-200 transition-all duration-300 hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                onClick={handleCopyEmail}
+              >
+                <span className="flex items-center gap-3">
+                  {isEmailCopied ? (
+                    <Check className="h-4 w-4 text-emerald-400 dark:text-emerald-600" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                  {isEmailCopied ? 'Copied Email' : 'Copy Email'}
+                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-500">
+                  {isEmailCopied ? 'Ready' : 'Clipboard'}
+                </span>
+              </button>
+              <a
+                href="#contact"
+                className="group flex items-center justify-between rounded-xl px-3 py-3 text-sm font-medium text-gray-200 transition-all duration-300 hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                onClick={handleContactLink}
+              >
+                <span className="flex items-center gap-3">
+                  <Mail className="h-4 w-4" />
+                  Go to Contact
+                </span>
+                <ArrowUpRight className="h-4 w-4 opacity-50 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+              </a>
+            </div>
+          </div>
+        )}
 
         {isMenuOpen && (
           <div className="absolute inset-x-3 top-[76px] overflow-hidden rounded-2xl border border-cyan-300/20 bg-gray-950/95 shadow-2xl shadow-cyan-950/30 backdrop-blur-2xl dark:border-cyan-700/20 dark:bg-white/95 dark:shadow-gray-300/30 md:hidden">
@@ -233,22 +351,59 @@ const Header = () => {
                   >
                     <Linkedin size={20} />
                   </a>
-                  <a
-                    href="mailto:prodip.sarker.cse@gmail.com"
-                    aria-label="Send email"
+                  <button
+                    type="button"
+                    aria-label="Open contact options"
+                    aria-expanded={isContactMenuOpen}
                     className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-gray-300 transition-all duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-200 dark:border-gray-900/10 dark:bg-gray-900/[0.04] dark:text-gray-700 dark:hover:text-cyan-700"
+                    onClick={() => setIsContactMenuOpen((isOpen) => !isOpen)}
                   >
                     <Mail size={20} />
-                  </a>
+                  </button>
                 </div>
               </div>
+
+              {isContactMenuOpen && (
+                <div className="space-y-1 rounded-xl border border-cyan-300/20 bg-white/[0.03] p-2 dark:border-cyan-700/20 dark:bg-gray-900/[0.03]">
+                  <a
+                    href={gmailComposeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                    onClick={() => {
+                      setIsContactMenuOpen(false);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <Send className="h-4 w-4" />
+                    Open Gmail
+                  </a>
+                  <button
+                    type="button"
+                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-gray-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                    onClick={handleCopyEmail}
+                  >
+                    {isEmailCopied ? (
+                      <Check className="h-4 w-4 text-emerald-400 dark:text-emerald-600" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                    {isEmailCopied ? 'Copied Email' : 'Copy Email'}
+                  </button>
+                  <a
+                    href="#contact"
+                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-200 dark:text-gray-800 dark:hover:text-cyan-700"
+                    onClick={handleContactLink}
+                  >
+                    <Mail className="h-4 w-4" />
+                    Go to Contact
+                  </a>
+                </div>
+              )}
               <a
                 href="#contact"
                 className="mt-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500 px-4 py-3 text-sm font-bold text-gray-950 shadow-lg shadow-cyan-950/25 transition-all duration-300"
-                onClick={() => {
-                  setActiveSection('contact');
-                  setIsMenuOpen(false);
-                }}
+                onClick={handleContactLink}
               >
                 <Sparkles className="h-4 w-4" />
                 Hire Me
