@@ -34,8 +34,6 @@ const coreSkills = new Set([
   'Tailwind CSS',
 ]);
 
-const stats = [];
-
 const SkillCard = ({
   title,
   subtitle,
@@ -133,27 +131,6 @@ const Skills = () => {
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-400 dark:text-gray-600 sm:text-lg">
             A focused stack for building scalable, responsive, and maintainable full-stack web applications.
           </p>
-        </motion.div>
-
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          className="mx-auto mb-8 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              variants={scaleIn}
-              className="rounded-2xl border border-white/10 bg-gray-950/35 px-4 py-4 text-center shadow-lg shadow-black/10 backdrop-blur-xl dark:border-gray-900/10 dark:bg-white/70"
-            >
-              <div className="text-2xl font-black text-cyan-300 dark:text-cyan-700">{stat.value}</div>
-              <div className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-gray-500 dark:text-gray-600">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
 
         <motion.div
