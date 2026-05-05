@@ -157,13 +157,16 @@ const Experience = () => {
             <motion.div
               key={label}
               variants={fadeUp}
-              className="rounded-xl border border-white/10 bg-gray-900/45 p-4 text-center shadow-lg shadow-black/10 backdrop-blur-sm dark:border-gray-900/10 dark:bg-white/75 dark:shadow-gray-300/30"
+              className="group relative overflow-hidden rounded-xl border border-white/10 bg-gray-900/45 p-4 text-center shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-300/35 hover:bg-gray-900/65 hover:shadow-2xl hover:shadow-cyan-950/20 dark:border-gray-900/10 dark:bg-white/75 dark:shadow-gray-300/30 dark:hover:border-cyan-700/25 dark:hover:bg-white dark:hover:shadow-cyan-900/10"
             >
-              <div className="mx-auto mb-3 grid h-10 w-10 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-400/10 text-cyan-300 dark:border-cyan-700/20 dark:bg-cyan-500/10 dark:text-cyan-700">
-                <Icon className="h-5 w-5" />
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/0 to-transparent transition-all duration-300 group-hover:via-cyan-300/70 dark:group-hover:via-cyan-700/50" />
+              <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-cyan-400/0 blur-2xl transition-colors duration-300 group-hover:bg-cyan-400/10 dark:group-hover:bg-cyan-500/10" />
+
+              <div className="relative mx-auto mb-3 grid h-10 w-10 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-400/10 text-cyan-300 transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-300/40 group-hover:bg-cyan-400/15 group-hover:text-cyan-200 dark:border-cyan-700/20 dark:bg-cyan-500/10 dark:text-cyan-700 dark:group-hover:border-cyan-700/35 dark:group-hover:bg-cyan-500/15">
+                <Icon className="h-5 w-5 transition-transform duration-300 group-hover:rotate-3" />
               </div>
-              <p className="text-xl font-bold text-white dark:text-gray-900">{value}</p>
-              <p className="mt-1 text-sm text-gray-400 dark:text-gray-600">{label}</p>
+              <p className="relative text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-100 dark:text-gray-900 dark:group-hover:text-cyan-800">{value}</p>
+              <p className="relative mt-1 text-sm text-gray-400 transition-colors duration-300 group-hover:text-gray-300 dark:text-gray-600 dark:group-hover:text-gray-700">{label}</p>
             </motion.div>
           ))}
         </motion.div>
