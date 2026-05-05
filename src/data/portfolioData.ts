@@ -185,11 +185,10 @@ export const portfolioData = {
       company: 'SSL Wireless',
       period: '2023 - Present',
       description: [
-        'Build and maintain enterprise-scale React.js & Next.js applications with TypeScript, focusing on performance and scalability',
-        'Design and develop RESTful APIs using NestJS with TypeORM, implementing RBAC and JWT-based authentication',
-        'Collaborate closely with UI/UX designers to deliver pixel-perfect, responsive interfaces using Ant Design and Tailwind CSS',
-        'Integrate real-time features using Socket.io and data visualization with Chart.js',
-        'Conduct code reviews, enforce best practices, and mentor junior developers',
+        'Build enterprise-scale React.js and Next.js applications with TypeScript, focusing on clean architecture, performance, and long-term maintainability',
+        'Design production-ready NestJS APIs with TypeORM, RBAC, JWT authentication, and reliable backend patterns',
+        'Deliver polished, responsive interfaces with Ant Design and Tailwind CSS while collaborating closely with UI/UX teams',
+        'Integrate real-time Socket.io features and Chart.js dashboards for data-heavy application workflows',
       ],
       techStack: [
         'TypeScript',
@@ -210,11 +209,10 @@ export const portfolioData = {
       company: 'Apsis Solutions Ltd.',
       period: '2020 - 2023',
       description: [
-        'Developed and delivered multiple client-facing web applications using React.js and Next.js',
-        'Built scalable backend services with Node.js and NestJS, integrating third-party APIs and payment gateways',
-        'Implemented responsive, accessible UIs using Tailwind CSS and Ant Design',
-        'Worked in agile teams, participating in sprint planning, code reviews, and daily standups',
-        'Optimized application performance and reduced page load times through code splitting and lazy loading',
+        'Developed client-facing web applications with JavaScript, TypeScript, React.js, and Next.js for business-critical products',
+        'Built scalable Node.js and NestJS backend services, integrating third-party APIs and payment gateways',
+        'Implemented responsive, accessible UIs with Tailwind CSS and Ant Design across multiple product modules',
+        'Improved frontend performance through code splitting, lazy loading, and practical React optimization techniques',
       ],
       techStack: [
         'JavaScript',
@@ -234,10 +232,10 @@ export const portfolioData = {
       company: 'Al-Hiyal Software',
       period: '2018 - 2020',
       description: [
-        'Developed web applications using C# and ASP.NET Web Forms with a focus on clean, maintainable code',
+        'Developed web applications with C# and ASP.NET Web Forms while building strong foundations in clean, maintainable code',
         'Implemented data access layers using Entity Framework and LINQ for efficient database operations',
-        'Designed and optimized SQL Server databases including stored procedures and complex queries',
-        'Gained strong fundamentals in software development lifecycle, version control with TFS, and team collaboration',
+        'Designed and optimized SQL Server databases with stored procedures and practical query improvements',
+        'Built core software engineering habits in SDLC, version control, debugging, and team collaboration',
       ],
       techStack: [
         'C#',
