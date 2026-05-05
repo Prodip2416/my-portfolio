@@ -183,6 +183,7 @@ export const portfolioData = {
     {
       role: 'Software Specialist',
       company: 'SSL Wireless',
+      companyUrl: 'https://sslwireless.com/',
       period: '2023 - Present',
       description: [
         'Build enterprise-scale React.js and Next.js applications with TypeScript, focusing on clean architecture, performance, and long-term maintainability',
@@ -207,6 +208,7 @@ export const portfolioData = {
     {
       role: 'Software Engineer',
       company: 'Apsis Solutions Ltd.',
+      companyUrl: 'https://apsissolutions.com/',
       period: '2020 - 2023',
       description: [
         'Developed client-facing web applications with JavaScript, TypeScript, React.js, and Next.js for business-critical products',
@@ -230,6 +232,7 @@ export const portfolioData = {
     {
       role: 'Junior Software Engineer',
       company: 'Al-Hiyal Software',
+      companyUrl: 'https://alhiyal.com/',
       period: '2018 - 2020',
       description: [
         'Developed web applications with C# and ASP.NET Web Forms while building strong foundations in clean, maintainable code',

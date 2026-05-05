@@ -5,6 +5,7 @@ import {
   Calendar,
   CheckCircle2,
   Code2,
+  ExternalLink,
   Layers3,
   Sparkles,
 } from 'lucide-react';
@@ -48,6 +49,7 @@ const experienceStats = [
 const ExperienceItem = ({
   role,
   company,
+  companyUrl,
   period,
   description,
   techStack,
@@ -55,6 +57,7 @@ const ExperienceItem = ({
 }: {
   role: string;
   company: string;
+  companyUrl?: string;
   period: string;
   description: string[];
   techStack: string[];
@@ -83,11 +86,24 @@ const ExperienceItem = ({
 
           <div className="flex items-center gap-2 text-sm font-semibold text-cyan-300 dark:text-cyan-700 sm:text-base">
             <Building2 className="h-4 w-4" />
-            <span>{company}</span>
+            {companyUrl ? (
+              <a
+                href={companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/company inline-flex items-center gap-1.5 transition-colors duration-300 hover:text-cyan-100 dark:hover:text-cyan-800"
+                aria-label={`Open ${company} website in a new tab`}
+              >
+                <span>{company}</span>
+                <ExternalLink className="h-3.5 w-3.5 opacity-70 transition-all duration-300 group-hover/company:translate-x-0.5 group-hover/company:-translate-y-0.5 group-hover/company:opacity-100" />
+              </a>
+            ) : (
+              <span>{company}</span>
+            )}
           </div>
         </div>
 
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-gray-400 dark:border-gray-900/10 dark:bg-gray-100 dark:text-gray-600">
+        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-400/10 px-3.5 py-2 text-sm font-bold text-cyan-200 shadow-sm shadow-cyan-950/20 transition-all duration-300 group-hover:border-cyan-300/45 group-hover:bg-cyan-400/15 group-hover:text-cyan-100 dark:border-cyan-700/20 dark:bg-cyan-500/10 dark:text-cyan-700 dark:shadow-cyan-900/10 dark:group-hover:border-cyan-700/35 dark:group-hover:bg-cyan-500/15 dark:group-hover:text-cyan-800">
           <Calendar className="h-4 w-4" />
           <span>{period}</span>
         </div>
