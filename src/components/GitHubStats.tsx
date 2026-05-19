@@ -2,8 +2,10 @@ import { motion, Variants } from 'framer-motion';
 import {
   ArrowUpRight,
   Calendar,
+  Code2,
   ExternalLink,
   Github,
+  RefreshCcw,
   Star,
   Users,
 } from 'lucide-react';
@@ -208,23 +210,63 @@ const GitHubStats = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
-            className="mt-12 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200"
+            className="mt-12 overflow-hidden rounded-lg border border-gray-800 bg-gray-950/80 shadow-2xl shadow-black/20 transition-all duration-300 hover:border-cyan-400/40 dark:border-gray-200 dark:bg-white dark:shadow-gray-200/70"
           >
-            <h3 className="text-xl font-semibold text-white dark:text-gray-900 mb-4 text-center">
-              Contribution Activity
-            </h3>
-            <div className="flex justify-center">
-              <img
-                src="https://github-readme-activity-graph.vercel.app/graph?username=prodip2416&theme=react-dark&hide_border=true&area=true"
-                alt="GitHub Activity Graph"
-                loading="lazy"
-                className="w-full max-w-4xl rounded-lg"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.parentElement!.innerHTML =
-                    '<p class="text-gray-400 text-center py-8">Activity graph unavailable. <a href="https://github.com/prodip2416" target="_blank" class="text-cyan-400 hover:underline">View on GitHub →</a></p>';
-                }}
-              />
+            <div className="flex flex-col gap-5 border-b border-gray-800 p-5 dark:border-gray-200 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <div>
+                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-300 dark:bg-cyan-50 dark:text-cyan-700">
+                  <RefreshCcw className="h-3.5 w-3.5" />
+                  Live GitHub graph
+                </div>
+                <h3 className="text-xl font-bold text-white dark:text-gray-950">
+                  Contribution Activity
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 dark:text-gray-600">
+                  Recent coding rhythm and public contribution flow.
+                </p>
+              </div>
+
+              <a
+                href="https://github.com/prodip2416"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-gray-700 px-4 py-2 text-sm font-bold text-gray-200 transition-all duration-300 hover:border-cyan-400 hover:text-cyan-300 dark:border-gray-200 dark:text-gray-700 dark:hover:border-cyan-500 dark:hover:text-cyan-700"
+              >
+                View Profile
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="p-5 sm:p-6">
+              <div className="overflow-hidden rounded-lg border border-gray-800 bg-gray-900/80 p-3 dark:border-gray-200 dark:bg-gray-950">
+                <img
+                  src="https://github-readme-activity-graph.vercel.app/graph?username=prodip2416&theme=react-dark&hide_border=true&area=true"
+                  alt="GitHub Activity Graph"
+                  loading="lazy"
+                  className="w-full rounded-md"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.parentElement!.innerHTML =
+                      '<div class="flex flex-col items-center justify-center gap-3 px-4 py-12 text-center"><div class="flex h-12 w-12 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><p class="text-base font-bold text-white">Activity graph unavailable</p><a href="https://github.com/prodip2416" target="_blank" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">View activity on GitHub</a></div>';
+                  }}
+                />
+              </div>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {[
+                  'Daily practice',
+                  'Public contributions',
+                  'Active repositories',
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-md border border-cyan-400/15 bg-cyan-400/10 px-3 py-2 text-sm font-semibold text-cyan-200 dark:bg-cyan-50 dark:text-cyan-700"
+                  >
+                    <Code2 className="h-4 w-4" />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
