@@ -270,53 +270,6 @@ const GitHubStats = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="mt-8 bg-gray-800 dark:bg-white p-6 rounded-xl border border-gray-700 dark:border-gray-200"
-          >
-            <h3 className="text-xl font-semibold text-white dark:text-gray-900 mb-4 text-center">
-              GitHub Statistics
-            </h3>
-            <div className="flex justify-center">
-              <img
-                src="https://github-readme-stats.vercel.app/api?username=prodip2416&show_icons=true&theme=react&hide_border=true&count_private=true"
-                alt="GitHub Stats"
-                className="w-full max-w-2xl rounded-lg"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="mt-8 text-center"
-          >
-            <a
-              href="https://github.com/prodip2416"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 text-gray-900 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300 group"
-            >
-              <motion.span
-                className="absolute inset-0 bg-cyan-500 rounded-full"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                style={{ originX: 0 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
-              />
-              <span className="relative z-10 flex items-center gap-2">
-                <Github className="w-5 h-5 group-hover:animate-bounce" />
-                View All Repositories
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </a>
-          </motion.div>
         </div>
       </div>
     </section>
