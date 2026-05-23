@@ -200,7 +200,7 @@ export const EmptyState = ({
 }: {
   title?: string;
   message?: string;
-  icon?: React.ComponentType<any>;
+  icon?: React.ComponentType<{ className?: string }>;
 }) => (
   <div className="text-center py-12">
     {Icon && (

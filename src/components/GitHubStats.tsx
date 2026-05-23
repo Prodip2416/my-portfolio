@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import {
   ArrowUpRight,
@@ -26,6 +27,23 @@ const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
 };
+
+const ActivityGraphFallback = () => (
+  <div className="flex flex-col items-center justify-center gap-3 px-4 py-12 text-center">
+    <div className="flex h-12 w-12 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300">
+      <Code2 className="h-6 w-6" />
+    </div>
+    <p className="text-base font-bold text-white">Activity graph unavailable</p>
+    <a
+      href="https://github.com/prodip2416"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm font-semibold text-cyan-300 hover:text-cyan-200"
+    >
+      View activity on GitHub
+    </a>
+  </div>
+);
 
 const StatCard = ({
   icon: Icon,
@@ -68,6 +86,7 @@ const StatCard = ({
 
 const GitHubStats = () => {
   const { user, repos, loading, error } = useGitHub();
+  const [activityGraphFailed, setActivityGraphFailed] = useState(false);
 
   if (loading) {
     return (
@@ -239,17 +258,17 @@ const GitHubStats = () => {
 
             <div className="p-5 sm:p-6">
               <div className="overflow-hidden rounded-lg border border-gray-800 bg-gray-900/80 p-3 dark:border-gray-200 dark:bg-gray-950">
-                <img
-                  src="https://github-readme-activity-graph.vercel.app/graph?username=prodip2416&theme=react-dark&hide_border=true&area=true"
-                  alt="GitHub Activity Graph"
-                  loading="lazy"
-                  className="w-full rounded-md"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.parentElement!.innerHTML =
-                      '<div class="flex flex-col items-center justify-center gap-3 px-4 py-12 text-center"><div class="flex h-12 w-12 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div><p class="text-base font-bold text-white">Activity graph unavailable</p><a href="https://github.com/prodip2416" target="_blank" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200">View activity on GitHub</a></div>';
-                  }}
-                />
+                {activityGraphFailed ? (
+                  <ActivityGraphFallback />
+                ) : (
+                  <img
+                    src="https://github-readme-activity-graph.vercel.app/graph?username=prodip2416&theme=react-dark&hide_border=true&area=true"
+                    alt="GitHub Activity Graph"
+                    loading="lazy"
+                    className="w-full rounded-md"
+                    onError={() => setActivityGraphFailed(true)}
+                  />
+                )}
               </div>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../contexts/useTheme';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,4 +64,3 @@ export default function ScrollToTop() {
     </AnimatePresence>
   );
 }
-

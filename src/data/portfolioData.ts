@@ -323,7 +323,9 @@ export const getProjectsByCategory = (category: string) => {
 };
 
 // Helper function to add new project
-export const addNewProject = (project: any) => {
+export const addNewProject = (
+  project: (typeof portfolioData.projects)[number]
+) => {
   portfolioData.projects.unshift(project); // Add to beginning
 };
 

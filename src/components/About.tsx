@@ -1,5 +1,5 @@
 import { motion, Variants, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
   ArrowUpRight,
   Briefcase,
@@ -54,6 +54,7 @@ const focusAreas = [
 const About = () => {
   const resumeBtnRef = useRef(null);
   const resumeInView = useInView(resumeBtnRef, { once: true, amount: 0.8 });
+  const [profileImageFailed, setProfileImageFailed] = useState(false);
 
   return (
     <section
@@ -77,27 +78,20 @@ const About = () => {
                 <div className="absolute -inset-4 rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-2xl shadow-cyan-950/20 backdrop-blur-xl dark:border-gray-900/10 dark:bg-white/55 dark:shadow-gray-300/30" />
                 <div className="group relative w-48 rounded-[1.75rem] bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 p-1 sm:w-60 lg:w-72">
                   <div className="aspect-[4/5] w-full overflow-hidden rounded-[1.45rem] bg-gray-900 transition-colors duration-300 dark:bg-gray-200">
-                    <img
-                      src="/profile.jpg"
-                      alt="Prodip Sarker - Full Stack Developer"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `
-                            <div class="w-full h-full bg-gray-900 dark:bg-gray-200 flex items-center justify-center">
-                              <div class="w-60 h-60 rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center">
-                                <svg class="w-32 h-32 text-cyan-400 dark:text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                                </svg>
-                              </div>
-                            </div>
-                          `;
-                        }
-                      }}
-                    />
+                    {profileImageFailed ? (
+                      <div className="flex h-full w-full items-center justify-center bg-gray-900 dark:bg-gray-200">
+                        <div className="flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 sm:h-48 sm:w-48">
+                          <Code2 className="h-20 w-20 text-cyan-400 dark:text-cyan-600 sm:h-28 sm:w-28" />
+                        </div>
+                      </div>
+                    ) : (
+                      <img
+                        src="/profile.jpg"
+                        alt="Prodip Sarker - Full Stack Developer"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={() => setProfileImageFailed(true)}
+                      />
+                    )}
                   </div>
                 </div>
 
