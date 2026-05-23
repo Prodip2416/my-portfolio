@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 interface GitHubUser {
   login: string;
-  name: string;
-  bio: string;
+  name: string | null;
+  bio: string | null;
   public_repos: number;
   followers: number;
   following: number;
@@ -54,14 +54,19 @@ export const useGitHub = (username: string = 'prodip2416') => {
         }
         const userData: GitHubUser = await userResponse.json();
 
-        // Fetch repositories
-        const reposResponse = await fetch(
-          `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`
-        );
-        if (!reposResponse.ok) {
-          throw new Error('Failed to fetch repositories');
+        let reposData: GitHubRepo[] = [];
+
+        try {
+          // Fetch repositories. Keep the profile visible if this request is rate-limited.
+          const reposResponse = await fetch(
+            `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`
+          );
+          if (reposResponse.ok) {
+            reposData = await reposResponse.json();
+          }
+        } catch {
+          reposData = [];
         }
-        const reposData: GitHubRepo[] = await reposResponse.json();
 
         setStats({
           user: userData,

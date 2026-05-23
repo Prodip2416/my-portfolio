@@ -55,9 +55,10 @@ const contactActions = [
   {
     label: 'WhatsApp',
     value: '+880 1744 610 807',
-    href: 'tel:+8801744610807',
+    href: 'https://wa.me/8801744610807',
     icon: Phone,
     action: 'Quick call or message',
+    external: true,
   },
 ];
 

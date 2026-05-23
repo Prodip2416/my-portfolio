@@ -2,10 +2,11 @@
 
 // Google Analytics Configuration
 export const GA_TRACKING_ID = 'G-XXXXXXXXXX'; // Replace with your actual GA4 tracking ID
+const isGAConfigured = GA_TRACKING_ID !== 'G-XXXXXXXXXX';
 
 // Initialize Google Analytics
 export const initGA = () => {
-  if (typeof window !== 'undefined' && !window.gtag) {
+  if (typeof window !== 'undefined' && isGAConfigured && !window.gtag) {
     // Load Google Analytics script
     const script = document.createElement('script');
     script.async = true;
@@ -14,7 +15,7 @@ export const initGA = () => {
 
     // Initialize gtag
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
+    function gtag(...args: unknown[]) {
       window.dataLayer.push(args);
     }
     window.gtag = gtag;
@@ -28,7 +29,7 @@ export const initGA = () => {
 
 // Track page views
 export const trackPageView = (url: string, title?: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (typeof window !== 'undefined' && isGAConfigured && window.gtag) {
     window.gtag('config', GA_TRACKING_ID, {
       page_path: url,
       page_title: title || document.title,
@@ -43,7 +44,7 @@ export const trackEvent = (
   label?: string,
   value?: number
 ) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (typeof window !== 'undefined' && isGAConfigured && window.gtag) {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
@@ -138,8 +139,9 @@ export const measurePerformance = () => {
         Math.round(metrics.totalLoadTime)
       );
 
-      // Log performance data (for debugging)
-      console.log('Performance Metrics:', metrics);
+      if (import.meta.env.DEV) {
+        console.info('Performance Metrics:', metrics);
+      }
     });
   }
 };
@@ -205,7 +207,7 @@ export const measureWebVitals = () => {
 
 // Error Tracking
 export const trackError = (error: Error, context?: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (typeof window !== 'undefined' && isGAConfigured && window.gtag) {
     window.gtag('event', 'exception', {
       description: error.message,
       fatal: false,
@@ -276,6 +278,10 @@ export const trackEngagement = () => {
 
 // Initialize all analytics
 export const initAnalytics = () => {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
   initGA();
   measurePerformance();
   measureWebVitals();
@@ -289,5 +295,5 @@ export const initAnalytics = () => {
 
 // Utility to check if analytics is available
 export const isAnalyticsAvailable = () => {
-  return typeof window !== 'undefined' && window.gtag;
+  return typeof window !== 'undefined' && isGAConfigured && Boolean(window.gtag);
 };
