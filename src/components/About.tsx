@@ -87,7 +87,7 @@ const About = () => {
                       </div>
                     ) : (
                       <img
-                        src="/profile.jpg"
+                        src="/prodip-sarker-full-stack-developer.jpg"
                         alt="Prodip Sarker - Full Stack Developer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={() => setProfileImageFailed(true)}
