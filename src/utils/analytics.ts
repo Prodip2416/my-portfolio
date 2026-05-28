@@ -85,6 +85,10 @@ export const trackPortfolioEvent = {
     trackEvent('resume_download', 'Contact', 'Resume');
   },
 
+  resumeView: () => {
+    trackEvent('resume_view', 'Contact', 'Resume');
+  },
+
   // Theme interactions
   themeToggle: (theme: string) => {
     trackEvent('theme_toggle', 'UI', theme);

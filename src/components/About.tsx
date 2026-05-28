@@ -6,6 +6,7 @@ import {
   Calendar,
   Code2,
   Download,
+  Eye,
   Layers3,
   MapPin,
   Server,
@@ -86,7 +87,7 @@ const About = () => {
                       </div>
                     ) : (
                       <img
-                        src="/profile.jpg"
+                        src="/prodip-sarker-full-stack-developer.jpg"
                         alt="Prodip Sarker - Full Stack Developer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={() => setProfileImageFailed(true)}
@@ -206,6 +207,16 @@ const About = () => {
                     <Download className="w-5 h-5 group-hover:animate-bounce" />
                     Download Resume
                   </span>
+                </a>
+                <a
+                  href="/resume/Prodip Sarker.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 font-semibold text-gray-100 transition-all duration-300 hover:scale-105 hover:border-cyan-300/45 hover:bg-cyan-400/10 hover:text-cyan-100 hover:shadow-lg hover:shadow-cyan-950/20 dark:border-gray-900/10 dark:bg-white/70 dark:text-gray-800 dark:hover:border-cyan-700/25 dark:hover:bg-cyan-50 dark:hover:text-cyan-800"
+                  onClick={() => trackPortfolioEvent.resumeView()}
+                >
+                  <Eye className="h-5 w-5" />
+                  View Resume
                 </a>
                 <a
                   href="#contact"
