@@ -2,15 +2,16 @@
 
 ## How to Add Your Photo
 
-1. **Upload your photo** to this folder (`public/images/`)
-2. **Name it** `profile.jpg` or `profile.png`
-3. **Recommended size**: 400x400px or larger (square aspect ratio works best)
+1. **Upload your photo** to the `public/` folder
+2. **Name it** `prodip-sarker-full-stack-developer.jpg`
+3. **Recommended size**: 1200px wide or larger
 4. **File formats**: JPG, PNG, or WebP
 
 ## Current Setup
 
 The portfolio is configured to look for:
-- **Primary**: `/images/profile.jpg`
+- **Primary**: `/prodip-sarker-full-stack-developer.jpg`
+- **Social preview**: `/og-image.jpg`
 - **Fallback**: If image not found, it will show a code icon
 
 ## File Structure
@@ -18,19 +19,20 @@ The portfolio is configured to look for:
 ```
 public/
 ├── images/
-│   ├── profile.jpg     ← Your photo here
 │   └── README.md       ← This file
+├── prodip-sarker-full-stack-developer.jpg
+├── og-image.jpg
 ├── resume/
-│   └── Prodip_Sarker_Resume.pdf
-└── README.md
+│   └── Prodip Sarker.pdf
+├── robots.txt
+└── sitemap.xml
 ```
 
 ## Image Requirements
 
 - **Format**: JPG, PNG, or WebP
-- **Size**: 400x400px minimum (square recommended)
+- **Size**: 1200px wide recommended
 - **Quality**: High resolution for crisp display
 - **File size**: Under 2MB for fast loading
 
-The image will be automatically cropped to a circle and have a beautiful gradient border with hover effects!
-
+The image is cropped by the UI and shown with a gradient border and hover effects.

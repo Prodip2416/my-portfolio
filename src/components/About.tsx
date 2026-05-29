@@ -226,6 +226,12 @@ const About = () => {
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
               </motion.div>
+              <motion.p
+                variants={fadeUp}
+                className="text-sm font-medium text-gray-500 dark:text-gray-600"
+              >
+                Current resume updated March 2027
+              </motion.p>
             </motion.div>
           </div>
         </div>

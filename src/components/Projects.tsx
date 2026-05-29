@@ -22,11 +22,15 @@ const stagger: Variants = {
 type Project = ReturnType<typeof getFeaturedProjects>[number];
 
 const getProjectImpact = (project: Project) => {
+  if (project.title === 'LinguaGuard') return 'MCP-powered i18n automation';
   if (project.title === 'Tailwind Kit') return '80+ polished UI components';
+  if (project.title === 'NestJS Auth Kit') return 'JWT auth starter architecture';
+  if (project.title === 'AI Text Summarization') return '3-model AI summarization flow';
   if (project.title === 'Data Insights Hub') return '8+ chart types and exports';
-  if (project.category === 'AI') return 'AI-assisted workflow automation';
-  if (project.category === 'Backend') return 'Production-ready API foundation';
-  return 'Responsive modern product experience';
+  if (project.title === 'My Portfolio') return '5+ years of work in one place';
+  if (project.category === 'AI') return 'AI workflow automation';
+  if (project.category === 'Backend') return 'Production-ready API patterns';
+  return 'Responsive product experience';
 };
 
 const ProjectCard = ({
