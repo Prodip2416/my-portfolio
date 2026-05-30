@@ -8,37 +8,47 @@ import Projects from './components/Projects';
 import GitHubStats from './components/GitHubStats';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { initAnalytics, trackPortfolioEvent } from './utils/analytics';
 function App() {
+  const isKnownRoute = window.location.pathname === '/';
 
   useEffect(() => {
     // Initialize analytics
     const cleanup = initAnalytics();
 
     // Track initial page load
-    trackPortfolioEvent.sectionView('Portfolio Home');
+    trackPortfolioEvent.sectionView(
+      isKnownRoute ? 'Portfolio Home' : '404 Not Found'
+    );
 
     // Cleanup on unmount
     return cleanup;
-  }, []);
+  }, [isKnownRoute]);
 
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gray-950 dark:bg-gray-100 transition-colors duration-300">
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <GitHubStats />
-          <Contact />
-        </main>
-        <Footer />
-        <ScrollToTop />
+        {isKnownRoute ? (
+          <>
+            <Header />
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Experience />
+              <Projects />
+              <GitHubStats />
+              <Contact />
+            </main>
+            <Footer />
+            <ScrollToTop />
+          </>
+        ) : (
+          <NotFound />
+        )}
 
       </div>
     </ThemeProvider>
