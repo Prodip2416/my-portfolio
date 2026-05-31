@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +17,10 @@ function App() {
   const isKnownRoute = window.location.pathname === '/';
 
   useEffect(() => {
+    document.title = isKnownRoute
+      ? 'Prodip Sarker | Full Stack Developer - React, Next.js, NestJS'
+      : 'Page Not Found | Prodip Sarker';
+
     // Initialize analytics
     const cleanup = initAnalytics();
 
@@ -30,27 +35,29 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-950 dark:bg-gray-100 transition-colors duration-300">
-        {isKnownRoute ? (
-          <>
-            <Header />
-            <main>
-              <Hero />
-              <About />
-              <Skills />
-              <Experience />
-              <Projects />
-              <GitHubStats />
-              <Contact />
-            </main>
-            <Footer />
-            <ScrollToTop />
-          </>
-        ) : (
-          <NotFound />
-        )}
+      <MotionConfig reducedMotion="user">
+        <div className="min-h-screen bg-gray-950 dark:bg-gray-100 transition-colors duration-300">
+          {isKnownRoute ? (
+            <>
+              <Header />
+              <main>
+                <Hero />
+                <About />
+                <Skills />
+                <Experience />
+                <Projects />
+                <GitHubStats />
+                <Contact />
+              </main>
+              <Footer />
+              <ScrollToTop />
+            </>
+          ) : (
+            <NotFound />
+          )}
 
-      </div>
+        </div>
+      </MotionConfig>
     </ThemeProvider>
   );
 }
