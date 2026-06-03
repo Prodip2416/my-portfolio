@@ -26,6 +26,8 @@ This portfolio is designed to give recruiters and hiring teams a fast view of:
 
 ## Tech Stack
 
+**Package name:** `prodip-sarker-portfolio`
+
 ### Portfolio Website
 
 - **React 18** for the UI
@@ -119,6 +121,7 @@ Modern analytics dashboard with multiple chart types, export features, responsiv
 
 - Responsive layout for desktop, tablet, and mobile
 - Dark/light theme toggle
+- Name-first hero section with Full Stack Developer positioning
 - Fancy glass-style header with active section tracking
 - Animated hero, about, skills, experience, and project sections
 - GitHub stats integration
