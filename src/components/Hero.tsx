@@ -46,7 +46,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mx-auto mb-6 max-w-4xl bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-400 bg-clip-text text-4xl font-black leading-tight text-transparent animate-gradient sm:text-5xl md:text-7xl"
           >
-            Full-Stack Developer
+            Prodip Sarker
           </motion.h1>
 
           <motion.p
@@ -55,8 +55,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
             className="mx-auto mb-5 max-w-3xl px-2 text-base leading-8 text-gray-200 dark:text-gray-700 sm:text-xl md:text-2xl"
           >
-            I build scalable React, Next.js, and NestJS applications with clean interfaces,
-            reliable APIs, and production-ready ownership.
+            Full-Stack Developer specializing in React, Next.js, NestJS, and
+            TypeScript. I build clean interfaces, reliable APIs, and
+            production-ready applications.
           </motion.p>
 
           <motion.div
